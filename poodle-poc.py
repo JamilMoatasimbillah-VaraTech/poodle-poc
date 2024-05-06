@@ -79,7 +79,6 @@ def run(SECRET):
     length_block = 16
 
     a = encrypt(SECRET)
-    print(decrypt(a))
 
     # fill the last block with full padding 0f
     t = binascii.hexlify(encrypt(SECRET))
@@ -102,6 +101,7 @@ def run(SECRET):
 
                 randkey()
                 request = split_len(binascii.hexlify(encrypt("$"*16 + "#"*t + SECRET + "%"*(block*length_block - char))), 32)
+                print(request)
                 # change the last block with a block of our choice
                 request[-1] = request[block]
                 # send the request a get the result => padding error OR OK

